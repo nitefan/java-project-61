@@ -7,7 +7,18 @@
 
 ### Пример запуска Calc:
 Win
+
 ![calcWin](https://user-images.githubusercontent.com/121972913/212411288-976b3374-6150-445b-a2a0-11ff513392e1.jpg)
 
 Loss
+
 ![calcLoss](https://user-images.githubusercontent.com/121972913/212411295-f755bd5d-89df-4328-b0d9-c8b4d00bd648.jpg)
+
+### Пример запуска GCD:
+Win
+
+![winGCD](https://user-images.githubusercontent.com/121972913/212738026-9b2b3ebc-003a-407a-8d78-81aa895df7fb.jpg)
+
+Loss
+
+![lossGCD](https://user-images.githubusercontent.com/121972913/212738031-62ad1db6-708c-41a5-ab5c-9d220e4f7211.jpg)

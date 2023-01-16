@@ -22,3 +22,12 @@ Win
 Loss
 
 ![lossGCD](https://user-images.githubusercontent.com/121972913/212738031-62ad1db6-708c-41a5-ab5c-9d220e4f7211.jpg)
+
+### Пример запуска Progression:
+Win
+
+![winProgression](https://user-images.githubusercontent.com/121972913/212769791-30addbc9-b060-49ac-a876-93b0617805df.jpg)
+
+Loss
+
+![lossProgression](https://user-images.githubusercontent.com/121972913/212769790-c10f0681-b19f-4221-aaa9-32da6b8e216b.jpg)

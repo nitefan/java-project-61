@@ -31,3 +31,12 @@ Win
 Loss
 
 ![lossProgression](https://user-images.githubusercontent.com/121972913/212769790-c10f0681-b19f-4221-aaa9-32da6b8e216b.jpg)
+
+### Пример запуска Prime:
+Win
+
+![winPrime](https://user-images.githubusercontent.com/121972913/212984723-f0413320-1d28-4b65-8bdc-90984ffdeffa.jpg)
+
+Loss
+
+![lossPrime](https://user-images.githubusercontent.com/121972913/212984727-d160899f-8428-454c-8008-35e10ce48713.jpg)

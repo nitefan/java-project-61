@@ -2,6 +2,7 @@ package hexlet.code;
 import java.util.Arrays;
 
 public class Utils {
+    private static final int PRIME_CHECK_START = 3;
     public static int getRandomNumber(int lowerBorder, int upperBorder) {
         return lowerBorder + (int) (Math.random() * upperBorder);
     }
@@ -35,14 +36,14 @@ public class Utils {
         if (randomNumber % 2 == 0) {
             return false;
         }
-        for (int i = 3; i * i <= randomNumber; i += 2) {
+        for (int i = PRIME_CHECK_START; i * i <= randomNumber; i += 2) {
             if (randomNumber % i == 0) {
                 return false;
             }
         }
         return true;
     }
-    public static int[] createFullProgression (int fullProgressionLength, int fullProgressionStart,
+    public static int[] createFullProgression(int fullProgressionLength, int fullProgressionStart,
                                                int fullProgressionStep) {
         int[] fullProgression = new int[fullProgressionLength];
         fullProgression[0] = fullProgressionStart;
@@ -53,7 +54,7 @@ public class Utils {
         }
         return fullProgression;
     }
-    public static String createDisplayProgression (int[] progressionLine, int hiddenElementPosition) {
+    public static String createDisplayProgression(int[] progressionLine, int hiddenElementPosition) {
         String[] progressionToProcess = new String[progressionLine.length];
         for (int j = 0; j < progressionLine.length; j++) {
             progressionToProcess[j] = String.valueOf(progressionLine[j]);

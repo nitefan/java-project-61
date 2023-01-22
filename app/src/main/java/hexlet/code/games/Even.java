@@ -1,9 +1,6 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
-import jdk.jshell.execution.Util;
-
-import java.util.Scanner;
 public class Even {
     public static final String GAME_QUESTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     public static void main() {

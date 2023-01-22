@@ -1,9 +1,6 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
-
-import java.util.Random;
-import java.util.Scanner;
 public class Calc {
     public static final String GAME_QUESTION = "What is the result of the expression?";
 

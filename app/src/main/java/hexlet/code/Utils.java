@@ -3,18 +3,18 @@ import java.util.Arrays;
 
 public class Utils {
     private static final int PRIME_CHECK_START = 3;
+    private static final int ADD = 1;
+    private static final int SUBTRACTION = 2;
+    private static final int MULTIPLY = 3;
     public static int getRandomNumber(int lowerBorder, int upperBorder) {
         return lowerBorder + (int) (Math.random() * upperBorder);
     }
     public static String getRandomOperator(int randomIndex) {
-        int add = 1;
-        int substraction = 2;
-        int multiply = 3;
-        if (randomIndex == add) {
+        if (randomIndex == ADD) {
             return "+";
-        } else if (randomIndex == substraction) {
+        } else if (randomIndex == SUBTRACTION) {
             return "-";
-        } else if (randomIndex == multiply) {
+        } else if (randomIndex == MULTIPLY) {
             return "*";
         }
         return null;

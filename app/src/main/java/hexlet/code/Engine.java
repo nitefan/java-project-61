@@ -19,9 +19,9 @@ public class Engine {
             String userAnswer = scan.next();
             if (userAnswer.equals(questionsAndAnswer[i][ANSWER_INDEX])) {
                 System.out.println("Correct!");
-            }
-            else {
-                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was " + "'" + questionsAndAnswer[i][1] + "'");
+            } else {
+                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
+                        + "'" + questionsAndAnswer[i][1] + "'");
                 System.out.println("Let's try again, " + userName + "!");
                 System.exit(0);
             }

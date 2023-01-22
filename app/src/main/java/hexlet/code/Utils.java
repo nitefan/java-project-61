@@ -6,11 +6,14 @@ public class Utils {
         return lowerBorder + (int) (Math.random() * upperBorder);
     }
     public static String getRandomOperator(int randomIndex) {
-        if (randomIndex == 1) {
+        int add = 1;
+        int substraction = 2;
+        int multiply = 3;
+        if (randomIndex == add) {
             return "+";
-        } else if (randomIndex == 2) {
+        } else if (randomIndex == substraction) {
             return "-";
-        } else if (randomIndex == 3) {
+        } else if (randomIndex == multiply) {
             return "*";
         }
         return null;
@@ -39,7 +42,8 @@ public class Utils {
         }
         return true;
     }
-    public static int[] createFullProgression (int fullProgressionLength, int fullProgressionStart, int fullProgressionStep){
+    public static int[] createFullProgression (int fullProgressionLength, int fullProgressionStart,
+                                               int fullProgressionStep) {
         int[] fullProgression = new int[fullProgressionLength];
         fullProgression[0] = fullProgressionStart;
 
@@ -49,12 +53,13 @@ public class Utils {
         }
         return fullProgression;
     }
-    public static String createDisplayProgression (int[] progressionLine, int hiddenElementPosition){
+    public static String createDisplayProgression (int[] progressionLine, int hiddenElementPosition) {
         String[] progressionToProcess = new String[progressionLine.length];
         for (int j = 0; j < progressionLine.length; j++) {
             progressionToProcess[j] = String.valueOf(progressionLine[j]);
         }
         progressionToProcess[hiddenElementPosition] = "..";
-        return Arrays.toString(progressionToProcess).replace(",", "").replace("[", "").replace("]", "");
+        return Arrays.toString(progressionToProcess).replace(",", "").replace("[", "")
+                .replace("]", "");
     }
 }

@@ -31,22 +31,14 @@ public class App {
         int userChoice = scanUserChoice.nextInt();
 
         switch (userChoice) {
-            case GREET:
-                Cli.main();
-            case EVEN:
-                Even.main();
-            case CALC:
-                Calc.main();
-            case GCD:
-                Gcd.main();
-            case PROGRESSION:
-                Progression.main();
-            case PRIME:
-                Prime.main();
-            case EXIT:
-                System.exit(0);
-            default:
-                System.out.println("No such game! Choose again.");
+            case GREET -> Cli.main();
+            case EVEN -> Even.main();
+            case CALC -> Calc.main();
+            case GCD -> Gcd.main();
+            case PROGRESSION -> Progression.main();
+            case PRIME -> Prime.main();
+            case EXIT -> System.exit(0);
+            default -> System.out.println("No such game! Choose again.");
         }
     }
 }

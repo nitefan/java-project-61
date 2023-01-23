@@ -6,14 +6,17 @@ public class Calc {
     private static final int LOWER_BORDER_FOR_NUMBER = 1;
     private static final int UPPER_BORDER_FOR_NUMBER = 20;
     private static final int UPPER_BORDER_FOR_OPERATOR = 3;
+    private static final int ADD = 1;
+    private static final int SUBTRACTION = 2;
+    private static final int MULTIPLY = 3;
 
-    public static void main() {
+    public static void playCalc() {
         String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_ROUNDS][2];
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
             int randomNumber1 = Utils.getRandomNumber(LOWER_BORDER_FOR_NUMBER, UPPER_BORDER_FOR_NUMBER);
             int randomNumber2 = Utils.getRandomNumber(LOWER_BORDER_FOR_NUMBER, UPPER_BORDER_FOR_NUMBER);
             int randomOperatorIndex = Utils.getRandomNumber(1, UPPER_BORDER_FOR_OPERATOR);
-            String randomOperator = Utils.getRandomOperator(randomOperatorIndex);
+            String randomOperator = getRandomOperator(randomOperatorIndex);
             String questionForm = randomNumber1 + " " + randomOperator + " " + randomNumber2;
             questionsAndAnswers[i][Engine.QUESTIONS_INDEX] = questionForm;
             int answer;
@@ -34,5 +37,15 @@ public class Calc {
             }
         }
         Engine.runGame(GAME_QUESTION, questionsAndAnswers);
+    }
+    public static String getRandomOperator(int randomIndex) {
+        if (randomIndex == ADD) {
+            return "+";
+        } else if (randomIndex == SUBTRACTION) {
+            return "-";
+        } else if (randomIndex == MULTIPLY) {
+            return "*";
+        }
+        return null;
     }
 }

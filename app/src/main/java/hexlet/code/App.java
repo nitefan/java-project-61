@@ -1,11 +1,9 @@
 package hexlet.code;
-
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.Gcd;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
-
 import java.util.Scanner;
 
 public class App {
@@ -31,12 +29,12 @@ public class App {
         int userChoice = scanUserChoice.nextInt();
 
         switch (userChoice) {
-            case GREET -> Cli.main();
-            case EVEN -> Even.main();
-            case CALC -> Calc.main();
-            case GCD -> Gcd.main();
-            case PROGRESSION -> Progression.main();
-            case PRIME -> Prime.main();
+            case GREET -> Cli.greet();
+            case EVEN -> Even.playEven();
+            case CALC -> Calc.playCalc();
+            case GCD -> Gcd.playGcd();
+            case PROGRESSION -> Progression.playProgression();
+            case PRIME -> Prime.playPrime();
             case EXIT -> System.exit(0);
             default -> System.out.println("No such game! Choose again.");
         }

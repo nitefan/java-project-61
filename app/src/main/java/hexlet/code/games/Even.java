@@ -13,7 +13,7 @@ public class Even {
             boolean randomNumberParity = isEven(randomNumber);
             if (randomNumberParity) {
                 questionsAndAnswers[i][Engine.ANSWER_INDEX] = "yes";
-            } else if (!randomNumberParity) {
+            } else {
                 questionsAndAnswers[i][Engine.ANSWER_INDEX] = "no";
             }
         }

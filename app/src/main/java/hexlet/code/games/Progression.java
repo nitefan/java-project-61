@@ -15,34 +15,25 @@ public class Progression {
             int progressionLength = Utils.getRandomNumber(LOWER_LENGTH_LIMIT, UPPER_LENGTH_LIMIT);
             int progressionStep = Utils.getRandomNumber(LOWER_STEP_LIMIT, UPPER_STEP_LIMIT);
             int progressionStart = Utils.getRandomNumber(1, UPPER_BORDER_FOR_START);
-            int[] fullProgression = createFullProgression(progressionLength, progressionStart, progressionStep);
+            String[] fullProgression = createFullProgression(progressionLength, progressionStart, progressionStep);
             int hiddenPosition = Utils.getRandomNumber(0, progressionLength);
-            int hiddenElement = fullProgression[hiddenPosition];
-            String displayProgression = createDisplayProgression(fullProgression, hiddenPosition);
-            String questionForm = "Question: " + displayProgression;
+            String answer = fullProgression[hiddenPosition];
+            fullProgression[hiddenPosition] = "..";
+            Arrays.toString(fullProgression).replace(",", "").replace("[", "")
+                    .replace("]", "");
+            String questionForm = "Question: " + Arrays.toString(fullProgression);
             questionsAndAnswers[i][Engine.QUESTIONS_INDEX] = questionForm;
-            questionsAndAnswers[i][Engine.ANSWER_INDEX] = String.valueOf(hiddenElement);
+            questionsAndAnswers[i][Engine.ANSWER_INDEX] = String.valueOf(answer);
         }
         Engine.runGame(GAME_QUESTION, questionsAndAnswers);
     }
-    public static int[] createFullProgression(int fullProgressionLength, int fullProgressionStart,
+    public static String[] createFullProgression(int fullProgressionLength, int fullProgressionStart,
                                               int fullProgressionStep) {
-        int[] fullProgression = new int[fullProgressionLength];
-        fullProgression[0] = fullProgressionStart;
-
-        for (int i = 1; i < fullProgressionLength; i++) {
-            int nextElement = fullProgressionStart + (fullProgressionStep * i);
-            fullProgression[i] = nextElement;
+        String[] fullProgression = new String[fullProgressionLength];
+        for (int i = 0; i < fullProgressionLength; i++) {
+            fullProgression[i] = String.valueOf(fullProgressionStart);
+            fullProgressionStart = fullProgressionStart + fullProgressionStep;
         }
         return fullProgression;
-    }
-    public static String createDisplayProgression(int[] progressionLine, int hiddenElementPosition) {
-        String[] progressionToProcess = new String[progressionLine.length];
-        for (int j = 0; j < progressionLine.length; j++) {
-            progressionToProcess[j] = String.valueOf(progressionLine[j]);
-        }
-        progressionToProcess[hiddenElementPosition] = "..";
-        return Arrays.toString(progressionToProcess).replace(",", "").replace("[", "")
-                .replace("]", "");
     }
 }

@@ -19,9 +19,8 @@ public class Progression {
             int hiddenPosition = Utils.getRandomNumber(0, progressionLength);
             String answer = fullProgression[hiddenPosition];
             fullProgression[hiddenPosition] = "..";
-            Arrays.toString(fullProgression).replace(",", "").replace("[", "")
-                    .replace("]", "");
-            String questionForm = "Question: " + Arrays.toString(fullProgression);
+            String questionForm = "Question: " + Arrays.toString(fullProgression).replace(",", "")
+                    .replace("[", "").replace("]", "");
             questionsAndAnswers[i][Engine.QUESTIONS_INDEX] = questionForm;
             questionsAndAnswers[i][Engine.ANSWER_INDEX] = String.valueOf(answer);
         }

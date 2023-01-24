@@ -7,6 +7,13 @@ import hexlet.code.games.Prime;
 import java.util.Scanner;
 
 public class App {
+    private static final int GREET = 1;
+    private static final int EVEN = 2;
+    private static final int CALC = 3;
+    private static final int GCD = 4;
+    private static final int PROGRESSION = 5;
+    private static final int PRIME = 6;
+    private static final int EXIT = 0;
     public static void main(String[] args) {
         Scanner scanUserChoice = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.");
@@ -21,13 +28,13 @@ public class App {
         int userChoice = scanUserChoice.nextInt();
 
         switch (userChoice) {
-            case 1 -> Cli.greet();
-            case 2 -> Even.playEven();
-            case 3 -> Calc.playCalc();
-            case 4 -> Gcd.playGcd();
-            case 5 -> Progression.playProgression();
-            case 6 -> Prime.playPrime();
-            case 0 -> System.exit(0);
+            case GREET -> Cli.greet();
+            case EVEN -> Even.playEven();
+            case CALC -> Calc.playCalc();
+            case GCD -> Gcd.playGcd();
+            case PROGRESSION -> Progression.playProgression();
+            case PRIME -> Prime.playPrime();
+            case EXIT -> System.exit(0);
             default -> System.out.println("No such game! Choose again.");
         }
     }

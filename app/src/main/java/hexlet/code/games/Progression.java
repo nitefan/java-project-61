@@ -10,6 +10,9 @@ public class Progression {
     private static final int UPPER_STEP_LIMIT = 5;
     private static final int UPPER_BORDER_FOR_START = 20;
     public static void playProgression() {
+        Engine.runGame(GAME_QUESTION, generateQuestionsAndAnswers());
+    }
+    public static String[][] generateQuestionsAndAnswers() {
         String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_ROUNDS][2];
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
             int progressionLength = Utils.getRandomNumber(LOWER_LENGTH_LIMIT, UPPER_LENGTH_LIMIT);
@@ -17,14 +20,14 @@ public class Progression {
             int progressionStart = Utils.getRandomNumber(1, UPPER_BORDER_FOR_START);
             String[] fullProgression = createFullProgression(progressionLength, progressionStart, progressionStep);
             int hiddenPosition = Utils.getRandomNumber(0, progressionLength);
-            String answer = fullProgression[hiddenPosition];
+            String answer = String.valueOf(fullProgression[hiddenPosition]);
             fullProgression[hiddenPosition] = "..";
-            String questionForm = "Question: " + Arrays.toString(fullProgression).replace(",", "")
-                    .replace("[", "").replace("]", "");
-            questionsAndAnswers[i][Engine.QUESTIONS_INDEX] = questionForm;
-            questionsAndAnswers[i][Engine.ANSWER_INDEX] = String.valueOf(answer);
+            questionsAndAnswers[i][Engine.QUESTIONS_INDEX] = "Question: " + Arrays.toString(fullProgression)
+                    .replace(",", "").replace("[", "")
+                    .replace("]", "");
+            questionsAndAnswers[i][Engine.ANSWER_INDEX] = answer;
         }
-        Engine.runGame(GAME_QUESTION, questionsAndAnswers);
+        return questionsAndAnswers;
     }
     public static String[] createFullProgression(int fullProgressionLength, int fullProgressionStart,
                                               int fullProgressionStep) {
